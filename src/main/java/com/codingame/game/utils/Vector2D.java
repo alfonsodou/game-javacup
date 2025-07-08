@@ -27,25 +27,54 @@ public class Vector2D {
 
     // return the length of the vector
     public double Length() {
-        return 0; 
+        return Math.sqrt(x * x + y * y);
     }
 
     public void Normalize() {
-
+        double magnitude = Length();
+        if (magnitude > 0) {
+            this.x = x / magnitude;
+            this.y = y / magnitude;
+        } else {
+            Zero();
+        }
     }
 
     // return de fot product of this and v2
-    public double Dot(Vector2D v2) {
-        return 0;
+    public double Dot(Vector2D other) {
+        return this.x * other.x + this.y * other.y;
     }
 
     // return the vector that is perpendicular to this one
     public Vector2D Perp() {
-        return new Vector2D();
+        return new Vector2D(-y, x);
     }
 
     //return the distance between this vector and the one passed as a parameter
-    public double Distance(Vector2D v2) {
-        return 0;
+    public double Distance(Vector2D other) {
+        double dx = this.x - other.x;
+        double dy = this.y - other.y;
+        return Math.sqrt(dx * dx + dy * dy);
     }
+
+    public double getX() {
+        return x;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    @Override
+    public String toString() {
+        return "(" + x + ", " + y + ")";
+    }    
 }
