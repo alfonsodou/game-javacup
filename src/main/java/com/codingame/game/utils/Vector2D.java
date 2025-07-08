@@ -57,6 +57,21 @@ public class Vector2D {
         return Math.sqrt(dx * dx + dy * dy);
     }
 
+    // Suma de vectores
+    public Vector2D add(Vector2D other) {
+        return new Vector2D(this.x + other.x, this.y + other.y);
+    }
+
+    // Resta de vectores
+    public Vector2D subtract(Vector2D other) {
+        return new Vector2D(this.x - other.x, this.y - other.y);
+    }
+
+    // Multiplicación por escalar
+    public Vector2D multiply(double scalar) {
+        return new Vector2D(this.x * scalar, this.y * scalar);
+    }
+
     public double getX() {
         return x;
     }
