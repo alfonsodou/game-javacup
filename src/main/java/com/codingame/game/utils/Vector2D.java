@@ -72,6 +72,11 @@ public class Vector2D {
         return new Vector2D(this.x * scalar, this.y * scalar);
     }
 
+    // División por escalar
+    public Vector2D divide(double scalar) {
+        return new Vector2D(this.x / scalar, this.y / scalar);
+    }    
+
     public double getX() {
         return x;
     }
