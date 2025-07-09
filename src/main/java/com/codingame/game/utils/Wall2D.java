@@ -20,8 +20,7 @@ public class Wall2D {
         Vector2D temp = from.subtract(to);
         temp.Normalize();
 
-        normal.setX(-temp.getY());
-        normal.setY(temp.getX());
+        this.normal = new Vector2D(-temp.getY(), temp.getX());
     }
 
     public Vector2D Center() {
